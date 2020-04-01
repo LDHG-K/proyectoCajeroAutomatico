@@ -1,0 +1,11 @@
+tablas banco
+
+CREATE TABLE tipo_Cuenta(idTipocuenta serial PRIMARY KEY,nombre_cuenta varchar(60) not null));
+-------------------------------------------------------
+CREATE TABLE tipo_Identificacion(idIdentificacion serial PRIMARY KEY,nombreIdentificacion varchar(60) not null);
+--------------------------------------------------------
+CREATE TABLE estado(tipoEstado serial PRIMARY KEY,estado varchar(10) not null);
+--------------------------------------------------------
+CREATE TABLE cliente(idcliente serial primary key, identificacion varchar(12) not null, nombres varchar(30) not null, apellidos varchar(30) not null, cuenta varchar(15) not null, saldo decimal(12,2) not null, tipo_Identificacion smallint not null, tipo_cuenta smallint not null, estado_tipo smallint not null, CONSTRAINT FK_tipo_identificacion FOREIGN KEY (tipo_identificacion) REFERENCES tipo_Identificacion (idIdentificacion) MATCH SIMPLE,CONSTRAINT FK_tipo_cuenta FOREIGN KEY (tipo_cuenta) REFERENCES tipo_Cuenta (idTipocuenta) MATCH SIMPLE, CONSTRAINT FK_estado_tipo FOREIGN KEY (estado_tipo) REFERENCES estado (tipoEstado) MATCH SIMPLE);
+---------------------------------------------------------
+CREATE TABLE transaccion (transaccionid serial PRIMARY KEY,clienteid integer not null,fecha TIMESTAMP NOT NULL,movimiento char(1) NOT NULL,valor decimal(12,2) NOT NULL,CONSTRAINT FK_clienteid FOREIGN KEY (clienteid) REFERENCES cliente (idcliente));
