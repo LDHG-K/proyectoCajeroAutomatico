@@ -1,0 +1,49 @@
+Comandos git
+
+git config = muestra las configuraciones de 
+git config --list = cofiguración por defecto y lo que falta
+git --lis --show-origin = muestra donde estan las configuraciones guardadas
+git config --global user.name = usuario
+git config --global user.email = correo
+
+git ini t =  crea un repositorio nuevo. Se crea un área staging (emra RAM) y el repositorio (.git, llamado master)
+git add [archivos] = "presenta archivo al repositorio", antes estaba en estado sin rastrear untracking, luego pasa al estado tracking. Siempre que haya un cambio hay que ejecutar este comando
+git rm --cached "archivo" = saca un archivo del cache (stage), es decir lo pasa a untracked
+git commit -m "comentario" = graba los cambios en el repositorio
+git comit -am = ahorra el git add, solo archivos trackeados previamente. 
+
+git status = muestra el estado de la bd
+git show = muesta cambios historicos
+git log "nombre arcivo" = muestra log del archivo , si no pasamos archivo muestra todo
+git log --stat = muestra el log de todo con los cambios en detalle
+git diff "id comit1" "idcomit2" = muestra la diferencia de los archivos
+git diff = diferencias entre el staging y el directorio actual y el staging
+
+git reset  "tag comit" --hard : regresa al comit anterior todo
+git reset  "tag comit" --soft : regresa al comit anterior dejando únicamente lo del staging
+
+git checkout "comit" = Trae todos los archivos o un archivo del repositorio etiquetado "comit" a nuestra carpeta, si es master trae lo actual 
+git checkout "comit" archivo = Trae el archivo del repositorio etiquetado "comit" a nuestra carpeta, si es master trae lo actual 
+
+
+git clone "url" = trae al repo local un repositorio remoto
+git push = pasa el repositorio local al remoto, lo que esta en el master (head)
+git fetch = trae al repositorio local del remoto pero no lo copia en los archivos .
+git merge = fusiona lo traido a travez del fetch con el repositorio local actualizando el directorio
+git pull = copia al repositorio local y hace el merge (los dos comandos anteriores)
+
+RAMAS
+git branch = muestra las ramas que existen en el proyecto (* en la activa)
+git branch "Nombre" = crea una rama 
+git checkout "rama" = Mueve git a la rama deseada
+git merge "rama" -m = mezcla en la rama donde me encuentro el contenido de "rama". El merge siempre ocurre en la rama donde estoy
+Para solucionar conflictos se debe seleccionar cual queda, borrar los comentarios producidos por GIT y hacer un commit
+git branch -d "Nombre" = elimina una rama
+
+REMOTOS origin (remoto)
+git remote add origgin https = adiciona un repositorio remoto al repositorio
+git remote origin -v = muestra a que servidor remoto esta ligado 
+git push origin master = envía la rama master (local) a origin (remoto)
+git pull origin master = hace merge del Origin al master
+git pull origin master --allow-unrelated-histories = hace lo mismo, se usa cuando no hay historias en comun en los repositorios (es raro, sucede la priemra vez si se creo el origin yse hace algo allí)
+git remote set-url origin url = cambia la url de origin. se pone origin para que cambie tanto push como fetch
