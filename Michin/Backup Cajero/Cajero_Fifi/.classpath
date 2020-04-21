@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/michin/Downloads/Backup Cajero/libreria Eclipse/postgresql-42.2.12 (1).jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/org.postgresql:postgresql:42.2.10.jre7"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/IntelliJ IDEA GridLayout"/>
+	<classpathentry kind="output" path="out/production/Cajero_Fifi"/>
+</classpath>
