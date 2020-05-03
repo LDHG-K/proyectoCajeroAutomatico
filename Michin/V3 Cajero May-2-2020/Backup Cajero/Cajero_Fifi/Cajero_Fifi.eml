@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inherit-compiler-output="true" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/out/test/Cajero_Fifi"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<levels>
+		<level name="org.postgresql:postgresql:42.2.10.jre7" value="project"/>
+		<level name="IntelliJ IDEA GridLayout" value="project"/>
+	</levels>
+</component>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="IntelliJ IDEA GridLayout">
+    <archive path="/home/michin/Downloads/Backup Cajero/Cajero_Fifi/lib/intellij_forms_rt.jar" />
+  </library>
+  <library name="org.postgresql:postgresql:42.2.10.jre7">
+    <archive path="/home/michin/.m2/repository/org/postgresql/postgresql/42.2.10.jre7/postgresql-42.2.10.jre7.jar" />
+  </library>
+</eclipse-userlibraries>
+
