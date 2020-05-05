@@ -47,3 +47,4 @@ git push origin master = envía la rama master (local) a origin (remoto)
 git pull origin master = hace merge del Origin al master
 git pull origin master --allow-unrelated-histories = hace lo mismo, se usa cuando no hay historias en comun en los repositorios (es raro, sucede la priemra vez si se creo el origin yse hace algo allí)
 git remote set-url origin url = cambia la url de origin. se pone origin para que cambie tanto push como fetch
+
