@@ -26,11 +26,11 @@ CONSTRAINT Fk_transaccion FOREIGN key (cliente_id) REFERENCES clientes (id_clien
 ----------------------------------------------------------
 ingreso de datos (ingresar en orden)
 
-insert into tipo_cuentas (id_tipocuenta,nombre_cuenta) values (1,'AHORROS');
-insert into tipo_cuentas (id_tipocuenta,nombre_cuenta) values (2,'DEBITO');
+insert into tipos_cuentas (id,nombre) values (1,'AHORROS');
+insert into tipos_cuentas (id,nombre) values (2,'DEBITO');
 
-insert into tipo_identificaciones (id_identificacion,nombre_identificacion) values (1,'CEDULA');
-insert into tipo_identificaciones (id_identificacion,nombre_identificacion) values (2,'CEDULA EXTRANJERA');
+insert into tipos_identificaciones (id,nombre) values (1,'CEDULA');
+insert into tipos_identificaciones (id,nombre) values (2,'CEDULA EXTRANJERA');
 
 insert into estados (tipo_estado,estado) values (1,'ACTIVO');
 insert into estados (tipo_estado,estado) values (2,'INACTIVO');
