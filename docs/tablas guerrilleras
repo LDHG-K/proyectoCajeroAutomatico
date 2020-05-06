@@ -17,12 +17,12 @@ CREATE TABLE clientes(id_cliente serial primary key, clave smallint not null,ide
 nombres varchar(30) not null, apellidos varchar(30) not null, cuenta varchar(15) not null,
 saldo decimal(12,2) not null, tipo_identificacion smallint not null, tipo_cuenta smallint not null,
 estado_tipo smallint not null,
-CONSTRAINT FK_tipo_identificacion FOREIGN KEY (tipo_identificacion) REFERENCES tipo_identificaciones (id_identificacion) MATCH SIMPLE,
-CONSTRAINT FK_tipo_cuenta FOREIGN KEY (tipo_cuenta) REFERENCES tipo_cuentas (id_tipocuenta) MATCH SIMPLE,
-CONSTRAINT FK_estado_tipo FOREIGN KEY (estado_tipo) REFERENCES estados (tipo_estado) MATCH SIMPLE,
+CONSTRAINT FK_tipo_identificacion FOREIGN KEY (tipo_identificacion) REFERENCES tipos_identificaciones (id) MATCH SIMPLE,
+CONSTRAINT FK_tipo_cuenta FOREIGN KEY (tipo_cuenta) REFERENCES tipos_cuentas (id) MATCH SIMPLE,
+CONSTRAINT FK_estado_tipo FOREIGN KEY (estado_tipo) REFERENCES estados (tipo_estado) MATCH SIMPLE);
 ---------------------------------------------------------
-CREATE TABLE transacciones (transaccion_id serial PRIMARY KEY, cliente_id integer not null ,fecha TIMESTAMP NOT NULL,movimiento char(1) NOT NULL,valor decimal(12,2) NOT NULL);
-CONSTRAINT Fk_transaccion FOREIGN key (cliente_id) REFERENCES clientes (id_cliente);
+CREATE TABLE transacciones (transaccion_id serial PRIMARY KEY, cliente_id integer not null ,fecha TIMESTAMP NOT NULL,movimiento char(1) NOT NULL,valor decimal(12,2) NOT NULL,
+CONSTRAINT Fk_transaccion FOREIGN key (cliente_id) REFERENCES clientes (id_cliente));
 ----------------------------------------------------------
 ingreso de datos (ingresar en orden)
 
