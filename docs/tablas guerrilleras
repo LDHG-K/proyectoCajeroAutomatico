@@ -1,22 +1,28 @@
 Tablas banco
-(ingresar en el respectivo orden)
 
-CREATE TABLE tipo_cuentas(id_tipocuenta serial PRIMARY KEY,nombre_cuenta varchar(60) not null);
+(ingresar en el respectivo orden)
+(luego de crear la base de datos \c cajero)
+(salir de la base de datos \q)
+(mirar bases de datos \l)
+
+CREATE DATABASE cajero;
 -------------------------------------------------------
-CREATE TABLE tipo_identificaciones(id_identificacion serial PRIMARY KEY,nombre_identificacion varchar(60) not null);
+CREATE TABLE tipos_cuentas(id serial PRIMARY KEY, nombre varchar(60) not null);
+-------------------------------------------------------
+CREATE TABLE tipos_identificaciones(id serial PRIMARY KEY,nombre varchar(60) not null);
 --------------------------------------------------------
 CREATE TABLE estados(tipo_estado serial PRIMARY KEY,estado varchar(10) not null);
 --------------------------------------------------------
 CREATE TABLE clientes(id_cliente serial primary key, clave smallint not null,identificacion varchar(12) not null,
 nombres varchar(30) not null, apellidos varchar(30) not null, cuenta varchar(15) not null,
 saldo decimal(12,2) not null, tipo_identificacion smallint not null, tipo_cuenta smallint not null,
-estado_tipo smallint not null, transaccion integer not null,
+estado_tipo smallint not null,
 CONSTRAINT FK_tipo_identificacion FOREIGN KEY (tipo_identificacion) REFERENCES tipo_identificaciones (id_identificacion) MATCH SIMPLE,
 CONSTRAINT FK_tipo_cuenta FOREIGN KEY (tipo_cuenta) REFERENCES tipo_cuentas (id_tipocuenta) MATCH SIMPLE,
 CONSTRAINT FK_estado_tipo FOREIGN KEY (estado_tipo) REFERENCES estados (tipo_estado) MATCH SIMPLE,
 ---------------------------------------------------------
-CREATE TABLE transacciones (transaccion_id serial PRIMARY KEY,fecha TIMESTAMP NOT NULL,movimiento char(1) NOT NULL,valor decimal(12,2) NOT NULL);
-CONSTRAINT Fk_transaccion FOREIGN key (transaccion_id) REFERENCES clientes (transaccion);
+CREATE TABLE transacciones (transaccion_id serial PRIMARY KEY, cliente_id integer not null ,fecha TIMESTAMP NOT NULL,movimiento char(1) NOT NULL,valor decimal(12,2) NOT NULL);
+CONSTRAINT Fk_transaccion FOREIGN key (cliente_id) REFERENCES clientes (id_cliente);
 ----------------------------------------------------------
 ingreso de datos (ingresar en orden)
 
