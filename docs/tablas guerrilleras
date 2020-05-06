@@ -36,10 +36,10 @@ insert into estados (tipo_estado,estado) values (1,'ACTIVO');
 insert into estados (tipo_estado,estado) values (2,'INACTIVO');
 insert into estados (tipo_estado,estado) values (3,'CONGELADO');
 
-insert into clientes (id_cliente,identificacion,clave,nombres,apellidos,cuenta,saldo,tipo_identificacion,tipo_cuenta,estado_tipo) values (4,1234,2908000012,'Nicolas','Perez',3521,110000,2,1,2);
-insert into clientes (id_cliente,identificacion,clave,nombres,apellidos,cuenta,saldo,tipo_identificacion,tipo_cuenta,estado_tipo) values (1,4567,1005840031,'Luis','Herrera',1040,1200000,1,2,1);
-insert into clientes (id_cliente,identificacion,clave,nombres,apellidos,cuenta,saldo,tipo_identificacion,tipo_cuenta,estado_tipo) values (3,8901,4002213422,'Laura','Paramo',4321,1500000,2,2,1);
-insert into clientes (id_cliente,identificacion,clave,nombres,apellidos,cuenta,saldo,tipo_identificacion,tipo_cuenta,estado_tipo) values (2,1234,100432112,'Jhon','Bravo',1243,900000,1,2,1);
+insert into clientes (id_cliente,identificacion,clave,nombres,apellidos,cuenta,saldo,tipo_identificacion,tipo_cuenta,estado_tipo) values (4,2908000012,1234,'Nicolas','Perez',3521,110000,2,1,2);
+insert into clientes (id_cliente,identificacion,clave,nombres,apellidos,cuenta,saldo,tipo_identificacion,tipo_cuenta,estado_tipo) values (1,1005840031,4567,'Luis','Herrera',1040,1200000,1,2,1);
+insert into clientes (id_cliente,identificacion,clave,nombres,apellidos,cuenta,saldo,tipo_identificacion,tipo_cuenta,estado_tipo) values (3,4002213422,8901,'Laura','Paramo',4321,1500000,2,2,1);
+insert into clientes (id_cliente,identificacion,clave,nombres,apellidos,cuenta,saldo,tipo_identificacion,tipo_cuenta,estado_tipo) values (2,100432112,1234,'Jhon','Bravo',1243,900000,1,2,1);
 
 insert into transacciones (transaccion_id,cliente_id,fecha,movimiento,valor) values(1,2,'2020-06-22 19:10:25-07','A',50000) ;
 insert into transacciones (transaccion_id,cliente_id,fecha,movimiento,valor) values(2,2,'2019-06-22 19:10:25-07','A',50000) ;
